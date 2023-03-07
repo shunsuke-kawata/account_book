@@ -1,0 +1,17 @@
+body{
+    background-color:aliceblue;
+}
+
+#title_add {
+    color: blue;
+    text-align :center;
+  
+}
+
+#add_form {
+    text-align: center;
+}
+
+#button_add {
+    text-align: center;
+}

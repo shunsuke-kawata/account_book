@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style_add.css') }}">
+    
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title_add">データの追加</h1>
+
+    <div id="add_form" style="color: black;">
+        <form method="POST" id = "form_app" onsubmit="return check()">
+            <label for="title">タイトル</label>
+            <input type="text" name="title" >
+            <label for="money">金額</label>
+            <input type="text" name="money">
+            <select name="paymenttype">
+                <option value="+">収入</option>
+                <option value="-">支出</option>
+            </select>
+            <input type="submit" name="sub_btn" value="追加">
+    
+        </form>
+    </div>
+    <br>
+
+    <div id="button_add"><a href="/" role="button">ホームに戻る</a></div>
+
+     
+</body>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_add.js') }}"></script>
+
+</html>
+
+
+
+
+
+
+

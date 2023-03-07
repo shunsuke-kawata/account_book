@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style_index.css') }}">
+    
+
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title_index">収支データ</h1>
+
+    
+    <table id ="datatable" border="1">
+        <tr>
+            <th>収支合計</th>
+            <th>収入合計</th>
+            <th>支出合計</th>
+        </tr>
+        <tr>
+            <td>{{ sum }}円</td>
+            <td>{{ plus }}円</td>
+            <td>{{ mynus }}円</td>
+        </tr>
+    </table>
+    
+    <br>
+
+    <div id ="button_add"><a href="/add" role="button">データを追加する</a></div>
+    
+    <br>
+
+
+    
+    <table id="datatablesub" border="1">
+        <tr>
+            <th>内容</th>
+            <th>金額</th>
+            <th>種類</th>
+            <th>日付</th>
+            <th>　　</th>
+            <th>　　</th>
+
+        </tr>
+
+        <div id ="button_delete"><a href="/delete_all" role="button"  onclick="return all_delete_check()">データを全て削除する</a></div>
+        <p>データ数　{{ count }}</p>
+    {% for data in datas | reverse %}
+
+        <tr>
+            <td>{{ data.title }}</td>
+            <td>{{ data.money }}円</td>
+            <td>{{ data.paymenttype }}</td>
+            <td>{{ data.created_at.date() }}</td>
+            <td><a href="/{{ data.id }}/update" role = "button">変更</a></td>
+            <td><a href="/{{ data.id }}/delete" role = "button">削除</a></td>
+                
+        </tr>
+    {% endfor %}
+    </table>
+    <br>
+
+
+    
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script_index.js') }}"></script>
+</html>
+
+
+
+
+
+
+
+

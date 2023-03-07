@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style_update.css') }}">
+    <title>Document</title>
+</head>
+    <body>
+        <h1 id ="title_update">編集画面</h1>
+
+    
+        <form method="POST">
+            <div id ="update_form">
+                <label for="title">タイトル</label>
+                <input type="text" name="title" value={{ data.title }}> 
+                <label for="body">内容</label>
+                <input type="text" name="money" value= {{ data.money }}>
+                <select name="paymenttype">
+                    <option value="+">収入</option>
+                    <option value="-">支出</option>
+                </select>
+                <input type="submit" value="更新">
+            </div>
+
+        </form>
+    
+
+    <div id = "button_home"><a href="/">ホームに戻る</a></div>
+    </body>
+<script src="../static/js/script_update.js"></script>
+</html>
+
+
+
+
+
